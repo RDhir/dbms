@@ -1,0 +1,134 @@
+<!--
+Follow me on
+------------
+Codepen: https://codepen.io/mycnlz/
+Dribbble: https://dribbble.com/mycnlz
+Pinterest: https://pinterest.com/mycnlz/
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel= "stylesheet" type= "text/css" href= "insert books.css">  
+    <script type ="text/javascript">
+    $(document).ready(function() {
+    $("#do_login").click(function() { 
+       closeLoginInfo();
+       $(this).parent().find('span').css("display","none");
+       $(this).parent().find('span').removeClass("i-save");
+       $(this).parent().find('span').removeClass("i-warning");
+       $(this).parent().find('span').removeClass("i-close");
+       
+        var proceed = true;
+        $("#login_form input").each(function(){
+            
+            if(!$.trim($(this).val())){
+                $(this).parent().find('span').addClass("i-warning");
+            	$(this).parent().find('span').css("display","block");  
+                proceed = false;
+            }
+        });
+       
+        if(proceed) //everything looks good! proceed...
+        {
+            $(this).parent().find('span').addClass("i-save");
+            $(this).parent().find('span').css("display","block");
+        }
+    });
+    
+    //reset previously results and hide all message on .keyup()
+    $("#login_form input").keyup(function() { 
+        $(this).parent().find('span').css("display","none");
+    });
+ 
+  openLoginInfo();
+  setTimeout(closeLoginInfo, 1000);
+});
+
+function openLoginInfo() {
+    $(document).ready(function(){ 
+    	$('.b-form').css("opacity","0.01");
+      $('.box-form').css("left","-37%");
+      $('.box-info').css("right","-37%");
+    });
+}
+
+function closeLoginInfo() {
+    $(document).ready(function(){ 
+    	$('.b-form').css("opacity","1");
+    	$('.box-form').css("left","0px");
+      $('.box-info').css("right","-5px"); 
+    });
+}
+
+$(window).on('resize', function(){
+      closeLoginInfo();
+});
+    </script>
+  </head>
+  
+<div class='box'>
+    <div class='box-form'>
+      <div class='box-login-tab'></div>
+      <div class='box-login-title'>
+        <div class='i i-login'></div><h2>Enter details</h2>
+      </div>
+      <div class='box-login'>
+        <div class='fieldset-body' id='login_form'>
+          <!--button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button-->
+            <p class='field'>
+            <label for='user'>Enter the Book no.</label>
+            <input type='text' id='book no' name='book no' title='book no' />
+            <span id='valida' class='i i-warning'></span>
+          </p>
+            <p class='field'>
+            <label for='pass'>Enter the book type</label>
+            <input type='text' id='book type' name='book type' title='book type' />
+            <span id='valida' class='i i-close'></span>
+          </p>
+          <p class='field'>
+              <label for='user'>Status</label>
+              <input type='text' id='Check status' name='Check status' title='Check status' />
+              <span id='valida' class='i i-warning'></span>
+            </p>
+            <p class='field'>
+                    <label for='user'>Enter the name of the book</label>
+                    <input type='text' id='name of the book' name='name of the book' title='name of the book' />
+                    <span id='valida' class='i i-warning'></span>
+                  </p>
+                  <p class='field'>
+                        <label for='user'>Enter the edition of the book</label>
+                        <input type='text' id='edition' name='edition' title='edition' />
+                        <span id='valida' class='i i-warning'></span>
+                      </p> <p class='field'>
+                            <label for='user'>Enter the author name</label>
+                            <input type='text' id='Enter the author name' name='Enter the author name' title='Enter the author name' />
+                            <span id='valida' class='i i-warning'></span>
+                          </p> <p class='field'>
+                                <label for='user'>Enter the price</label>
+                                <input type='text' id='book price' name='book price' title='book price' />
+                                <span id='valida' class='i i-warning'></span>
+                              </p> 
+  
+            <!--label class='checkbox'>
+              <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+            </label-->
+  
+            <input type='submit' id='do_login' value='DEPOSIT' title='Deposit book' />
+        </div>
+      </div>
+    </div>
+    <!--div class='box-info'>
+                <!--p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Need Help?</h3>
+      </p-->
+                <!--div class='line-wh'></div>
+                <button onclick="" class='b-support' title='Forgot Password?'> Forgot Password?</button>
+      <button onclick="" class='b-support' title='Contact Support'> Contact Support</button>
+                <div class='line-wh'></div>
+      <button onclick="" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button>
+            </div-->
+  </div>
+  
+  
+   <!--div class='icon-credits'>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/budi-tanrim" title="Budi Tanrim">Budi Tanrim</a> & <a href="http://www.flaticon.com/authors/nice-and-serious" title="Nice and Serious">Nice and Serious</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div-->
+   
+   </html>

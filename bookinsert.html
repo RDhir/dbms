@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Book search</title>
+	<link rel= "stylesheet" type= "text/css" href= "bookinsert.css">
+</head>
+<body>
+<div class="login-page">
+<h2> Enter the details</h2>
+  <div class="form">
+    <!--form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message"><a href="#"></a></p>
+    </form-->
+    <form class="login-form" method="POST" action="insert-books.php" >
+      <input type="text" placeholder="Enter the Book no." name="bno"/>
+	  <br>
+      <input type="text" placeholder="Enter the book type" name="btype"/>
+    <br>
+      <input type="text" placeholder="Status" name="status"/>
+      <br>
+      <input type="text" placeholder="Name of the book" name="name"/>
+      <br> <input type="text" placeholder="Enter the edition of the book" name="edition"/>
+      <br> <input type="text" placeholder="Enter the author name" name="author"/>
+      <br>
+      <input type="text" placeholder="Enter the price" name="price"/>
+      <br>
+      <button>Search</button>
+      
+    </form>
+  </div>
+</div>
+<!--script type = "javascript">
+	$('.message a').click(function(){
+	$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+	});
+</script-->
+</body>
+</html>
